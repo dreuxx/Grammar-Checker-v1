@@ -1,75 +1,120 @@
 I don't know much English, so I used AI for the following text:
 
 # Grammar Checker
-Grammar Checker es una extensión de Chrome diseñada para revisar y mejorar la gramática y ortografía en múltiples idiomas utilizando la API de OpenAI.
-Características
 
-# Requisitos
+Grammar Checker is a Chrome extension designed to review and improve grammar and spelling in multiple languages using the OpenAI API.
 
-API de OpenAI: Necesitarás una clave de API para que la extensión funcione. Puedes registrarte en OpenAI y obtener una clave en su sitio web.
-Navegador Chrome: La extensión fue desarrollada y probada en Google Chrome.
+## Features
 
-# Corrección de Gramática y Ortografía: Revisa textos en múltiples idiomas y proporciona sugerencias de corrección.
-Soporte Multi-Idioma: La extensión admite los siguientes idiomas:
+- **Grammar and Spelling Correction**: Reviews text in multiple languages and provides correction suggestions.
+- **Multi-Language Support**: The extension supports the following languages:
+  - Spanish
+  - English
+  - French
+  - German
+  - Italian
+  - Portuguese
+  - Indonesian
+  - Polish
+  - Vietnamese
+  - Javanese
+  - Turkish
+- **Error Highlighting Without Modifying Original Text**: The extension identifies errors in the text and highlights them without modifying the original content. Errors are underlined with a dashed line, and hovering over them displays a correction suggestion.
+- **Automatic Language Detection**: The extension automatically detects the text's language.
+- **User-Friendly Interface**: The extension provides a simple interface where you can input text, see highlighted errors, and copy the result.
+- **API Customization**: Allows you to enter and save your OpenAI API key in the settings.
+- **Support for Long Texts**: It can review texts up to 2500 words.
 
-Español
-Inglés
-Francés
-Alemán
-Italiano
-Portugués
-Indonesio
-Polaco
-Vietnamita
-Javanés
-Turco
+## Requirements
 
+- **OpenAI API**: You'll need an API key for the extension to work. You can sign up at [OpenAI](https://openai.com) and obtain a key on their website.
+- **Chrome Browser**: The extension was developed and tested in Google Chrome.
 
-Resaltado de Errores Sin Modificar el Texto Original: La extensión identifica errores en el texto y los resalta sin modificar el contenido original. Los errores se subrayan con una línea punteada y al pasar el cursor sobre ellos se muestra una sugerencia de corrección.
-Detección Automática de Idioma: La extensión detecta automáticamente el idioma del texto.
-Interfaz Amigable: Proporciona una interfaz simple donde puedes ingresar texto, ver errores resaltados y copiar el resultado.
-Personalización de API: Permite ingresar y guardar tu clave de API de OpenAI en la configuración.
-Soporte para Textos Largos: Puede revisar textos de hasta 2500 palabras.
+## Installation
 
-# Instalación
+1. Clone or download this repository.
+2. Open Chrome and go to `chrome://extensions/`.
+3. Enable Developer Mode in the top right corner.
+4. Click on "Load unpacked extension" and select the folder where you downloaded this repository.
 
-Clona o descarga este repositorio.
-Abre Chrome y ve a chrome://extensions/.
-Activa el Modo Desarrollador en la esquina superior derecha.
-Haz clic en "Cargar extensión sin empaquetar" y selecciona la carpeta donde descargaste este repositorio.
+## Configuration
 
-# Configuración
+1. Click the extension icon in the Chrome toolbar.
+2. Enter your OpenAI API key in the corresponding field and click "Save API".
+3. You can obtain an API key at [OpenAI API Keys](https://platform.openai.com/account/api-keys).
+4. The API key is securely stored in Chrome storage.
 
-Haz clic en el ícono de la extensión en la barra de herramientas de Chrome.
-Ingresa tu clave de API de OpenAI en el campo correspondiente y haz clic en "Guardar API".
-Puedes obtener una clave de API en OpenAI API Keys.
-La clave de API se almacena de forma segura en el almacenamiento de Chrome.
+## Usage
 
-# Uso
+1. Open the extension by clicking on the Grammar Checker icon.
+2. Enter the text you want to review in the input field (up to 2500 words).
+3. Click on "Check Grammar" to receive correction suggestions.
+4. Words with errors will be highlighted with a dashed underline. Hovering over them will show a correction suggestion.
+5. You can copy the original text (without modifications) by clicking on "Copy corrected text".
 
-Abre la extensión haciendo clic en el ícono de Grammar Checker.
-Ingresa el texto que deseas revisar en el campo de entrada (hasta 2500 palabras).
-Haz clic en "Revisar Gramática" para recibir sugerencias de corrección.
-Las palabras con errores se resaltarán con un subrayado punteado. Al pasar el cursor sobre ellas se mostrará una sugerencia de corrección.
-Puedes copiar el texto original (sin modificaciones) haciendo clic en "Copiar texto corregido".
+## Main Files
 
-# Archivos Principales
+- `background.js`: Manages installation events, configuration, and extension permissions.
+- `manifest.json`: Defines the extension's configuration and permissions.
+- `popup.html`: Contains the user interface for inputting and reviewing text.
+- `popup.js`: Controls grammar correction logic, language detection, error highlighting, and communication with the OpenAI API.
+- `styles.css`: Defines the design and style of the interface, including error highlighting.
+- `content.js`: Handles text selection and communication with the webpage.
+- `options.html` and `options.js`: Allow users to configure the OpenAI API key and model.
 
-background.js: Gestiona eventos de instalación, configuración y permisos de la extensión.
-manifest.json: Define la configuración y permisos de la extensión.
-popup.html: Contiene la interfaz de usuario para ingresar y revisar texto.
-popup.js: Controla la lógica de corrección gramatical, detección de idioma, resaltado de errores y comunicación con la API de OpenAI.
-styles.css: Define el diseño y estilo de la interfaz, incluyendo el resaltado de errores.
-content.js: Maneja la selección de texto y comunicación con la página web.
-options.html y options.js: Permiten a los usuarios configurar la clave de API de OpenAI y el modelo.
+## Important Notes
 
-# Notas Importantes
+- **Word Limit**: The extension allows you to review texts up to 2500 words.
+- **Privacy**: All text processed is sent to the OpenAI API for corrections. Avoid including sensitive information in the submitted text.
+- **Error Highlighting Without Changing Original Text**: The extension highlights grammatical and spelling errors without modifying the original text, allowing users to view errors without affecting the content.
 
-Límite de Palabras: La extensión permite revisar textos de hasta 2500 palabras.
-Privacidad: Todo el texto procesado se envía a la API de OpenAI para correcciones. Evita incluir información sensible en el texto enviado.
-Resaltado de Errores Sin Modificar el Texto Original: La extensión resalta errores gramaticales y ortográficos sin modificar el texto original, permitiendo a los usuarios ver los errores sin afectar el contenido.
+## Example Implementation
 
-# Contribución
-Si deseas contribuir al proyecto, por favor haz un fork del repositorio, crea una nueva rama para tus cambios y envía un pull request.
-Licencia
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+```python
+import openai
+from langdetect import detect
+
+class GrammarChecker:
+    def __init__(self, api_key):
+        self.api_key = api_key
+        openai.api_key = api_key
+
+    def check_grammar(self, text):
+        try:
+            language = detect(text)
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are an expert grammar and spelling checker."},
+                    {"role": "user", "content": f"Check this text for grammar and spelling errors:\n\n{text}"}
+                ],
+                temperature=0.3
+            )
+            return {
+                'status': 'success',
+                'language': language,
+                'suggestions': response.choices[0].message.content
+            }
+        except Exception as e:
+            return {
+                'status': 'error',
+                'error': str(e)
+            }
+
+# Usage example
+checker = GrammarChecker('your-api-key')
+result = checker.check_grammar("Your text here")
+print(result['suggestions'] if result['status'] == 'success' else result['error'])
+```
+
+## Contribution
+
+If you would like to contribute to the project, please:
+
+1. Fork the repository
+2. Create a new branch for your changes
+3. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
